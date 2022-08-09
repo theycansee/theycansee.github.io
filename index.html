@@ -11,29 +11,61 @@
   </head>
   <body>
 
-    <div data-role="page">
+    <div data-role="page" id="mainpage">
 
     <div role="main" class="ui-content">
 
     <div class="ui-body ui-body-a ui-corner-all">
     <p>This is a test</p>
+    <p id="finder"></p>
     <p><img src="eyes.png" alt="Mysterious eyes staring at you" width="100%"></p>
     </div>
     </div>
     </div> <!-- /page -->
 
+    <div data-role="page" id="intro1">
+
+    </div>
+
+    <div data-role="page" id="solvefirst1">
+
+    </div>
+
+    <div data-role="page" id="solvesecond1">
+
+    </div>
+
+    <div data-role="page" id="success1">
+
+    </div>
+
 
     <script>
-        const gethash = function(str, seed = 1337) {
-        let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
-        for (let i = 0, ch; i < str.length; i++) {
-            ch = str.charCodeAt(i);
-            h1 = Math.imul(h1 ^ ch, 2654435761);
-            h2 = Math.imul(h2 ^ ch, 1597334677);
-        }
-        h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
-        h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
-        return 4294967296 * (2097151 & h2) + (h1>>>0);
+        function gethash(str, seed = 1337) {
+            let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+            for (let i = 0, ch; i < str.length; i++) {
+                ch = str.charCodeAt(i);
+                h1 = Math.imul(h1 ^ ch, 2654435761);
+                h2 = Math.imul(h2 ^ ch, 1597334677);
+            }
+            h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+            h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+            return 4294967296 * (2097151 & h2) + (h1>>>0);
+        };
+        
+
+
+
+        $(function() {
+            if(localStorage.getItem("seenintro") == "") {
+                localStorage.setItem("seenintro", "yes");
+                $( '#finder' ).html('First time seeing this page');
+            }
+            else {
+                $( '#finder' ).html('Seen it before');
+            }
+        });
+
     </script>
 };
   </body>
