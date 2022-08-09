@@ -57,7 +57,7 @@
 
 
         $(function() {
-            if(localStorage.getItem("seenintro") == "") {
+            if(!localStorage.getItem("seenintro")) {
                 localStorage.setItem("seenintro", "yes");
                 $( '#finder' ).html('First time seeing this page');
             }
