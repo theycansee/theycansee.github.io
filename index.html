@@ -27,9 +27,9 @@
     </div>
     </div> <!-- /page -->
 
-    <div data-role="page" data-dialog="true" data-overlay-theme="b" id="intro1">
+    <div data-role="page" data-dialog="true" id="intro1">
         <p>This is the intro.</p>
-        <a href="#" data-rel="back">Close</a>
+        <a href="/" data-rel="back">Close</a>
     </div>
 
     <div data-role="page" id="solvefirst1">
@@ -66,7 +66,7 @@
         $(function() {
             if(!localStorage.getItem("seenintro")) {
                 localStorage.setItem("seenintro", "yes");
-                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#intro1",  { role: "dialog" } );
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#intro1" );
             }
         });
 
