@@ -12,7 +12,9 @@
   <body>
 
     <div data-role="page" id="mainpage">
+    <div data-role="header">
 
+    </div>
     <div role="main" class="ui-content">
 
     <div class="ui-body ui-body-a ui-corner-all">
@@ -20,6 +22,9 @@
     <p id="finder"></p>
     <p><img src="eyes.png" alt="Mysterious eyes staring at you" width="100%"></p>
     </div>
+    </div>
+    <div data-role="footer">
+        <button class="ui-btn" onclick="resetStorage()">Reset</button>
     </div>
     </div> <!-- /page -->
 
@@ -53,7 +58,9 @@
             return 4294967296 * (2097151 & h2) + (h1>>>0);
         };
         
-
+        function resetStorage() {
+            localStorage.clear();
+        }
 
 
         $(function() {
