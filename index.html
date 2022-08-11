@@ -23,9 +23,9 @@
             </div>
             <h3 class="ui-bas ui-bar-a ui-corner-all">Passwords</h3>
             <div class="ui-body ui-body-a ui-corner-all">
-                <a id="photobtn" class="ui-btn ui-corners-all" href="photos.html"><img src="btn1.png"></a>
-                <a id="cipherbtn" class="ui-btn ui-corners-all" href="ciphers.html"><img src="btn2.png"></a>
-                <a id="riddlebtn" class="ui-btn ui-corners-all" href="riddles.html"><img src="btn3.png"></a>
+                <a id="photobtn" class="ui-btn ui-corners-all" href="#photos"><img src="btn1.png"></a>
+                <a id="cipherbtn" class="ui-btn ui-corners-all" href="#ciphers"><img src="btn2.png"></a>
+                <a id="riddlebtn" class="ui-btn ui-corners-all" href="#riddles"><img src="btn3.png"></a>
             </div>
         </div>
         <div data-role="footer">
@@ -448,13 +448,13 @@
         $( "#ciphers" ).on("pagecreate", function(event) {
             if(!localStorage.getItem("seencipherintro")) {
                 localStorage.setItem("seencipherintro", "yes");
-                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#ciphersintrointro" );
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#ciphersintro" );
             }
         });
         $( "#riddles" ).on("pagecreate", function() {
             if(!localStorage.getItem("seenriddleintro")) {
                 localStorage.setItem("seenriddleintro", "yes");
-                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#riddlesintrointro" );
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#riddlesintro" );
             }
         });
 
