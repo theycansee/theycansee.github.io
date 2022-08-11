@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Watch for the EYES</title>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   </head>
@@ -17,9 +18,15 @@
     </div>
     <div role="main" class="ui-content">
 
+    <div data-role="header">
+
+    </div>
+
     <div class="ui-body ui-body-a ui-corner-all">
-    <p>This is a test</p>
-    <p><img src="eyes.png" alt="Mysterious eyes staring at you" width="100%"></p>
+
+        <p>This is a test</p>
+        <p><img src="eyes.png" alt="Mysterious eyes staring at you" width="100%"></p>
+
     </div>
     </div>
     <div data-role="footer">
@@ -27,39 +34,320 @@
     </div>
     </div> <!-- /page -->
 
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" id="intro1">
-        <div data-role="header"></div>
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="intro1">
         <div role="main" class="ui-content">
-            <div class="ui-body ui-body-a">
-                <p>This is the intro.</p>
-            </div></div>
+            <div class="ui-body ui-body-b">
+                <a href="#intro2">
+                    <p><img src="page1.png" width="100%" alt="Can you hear me? Thank goodness someone's there."></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
         <div data-role="footer">
-        <a href="#intro2">Next</a>
+        <a href="/" >Skip</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="intro2">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#intro3">
+                    <p><img src="page2.png" width="100%" alt="My name is Robin. I'm a traveler of alternate worlds, but now I'm stuck in BETWEEN."></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Skip</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="intro3">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#intro4">
+                    <p><img src="page3.png" width="100%" alt="I can open the passage home, but I need the passwords. There are three sets of three to find."></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Skip</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="intro4">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#intro5">
+                    <p><img src="page4.png" width="100%" alt="You are at a CONVERGENCE of worlds. The passwords are hidden there."></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Skip</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="intro5">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#intro6">
+                    <p><img src="page5.png" width="100%" alt="I sent out a signal, marking the passwords with my sigil. Look for the EYES. Will you help me get home?"></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Skip</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="intro6">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="/">
+                    <p><img src="page6.png" width="100%" alt="Oh, one more thing. I have a friend at the CONVERGENCE. He is wearing my sigil. If you see him, tell him Robin sent you."></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
         <a href="/" >Close</a>
         </div>
     </div>
 
-    <div data-role="page" data-dialog="true" id="intro2">
-        <div data-role="header"></div>
-        <div role="main">
-        <p>This is still the intro.</p>
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="tweetintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="/">
+                    <p><img src="page7.png" width="100%" alt="I will send clues out when I can find them, using the Tweet Bird app. #Robin sent me."></p>
+                </a>
+            </div>
         </div>
         <div data-role="footer">
         <a href="/" >Close</a>
         </div>
     </div>
 
-    <div data-role="page" id="solvefirst1">
-
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="photosintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="/">
+                    <p><img src="page8.png" width="100%" alt="These passwords come from different depictions of the multiverse. Look for the EYES to find them"></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
     </div>
 
-    <div data-role="page" id="solvesecond1">
-
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="ciphersintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="/">
+                    <p><img src="page9.png" width="100%" alt="These passwords are secret codes and ciphers. Look for the EYES to decipher them."></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
     </div>
 
-    <div data-role="page" id="success1">
-
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="riddlesintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="/">
+                    <p><img src="page10.png" width="100%" alt="These passwords are hidden behind riddles. Look for the EYES to find the riddles, but you have to answer them yourself."></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
     </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvefirst1">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvefirst2">
+                    <p><img src="page11.png" width="100%" alt="Oh my gosh! You got one of them!"></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvefirst2">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="/">
+                    <p><img src="page12.png" width="100%" alt="There are still two sets of passwords left. Please find them!"></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvesecond1">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvesecond2">
+                    <p><img src="page13.png" width="100%" alt="[lock opens]"></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvesecond2">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvesecond3">
+                    <p><img src="page14.png" width="100%" alt="I can SEE..."></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvesecond3">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="/">
+                    <p><img src="page15.png" width="100%" alt="...that you're AWESOME! Just one set left! I can almost get home!"></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvelast1">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvelast2">
+                    <p><img src="page16.png" width="100%" alt="[lock opens]"></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvelast2">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvelast3">
+                    <p><img src="page17.png" width="100%" alt="[door opens]"></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvelast3">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvelast4">
+                    <p><img src="page18.png" width="100%" alt="It's open..."></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvelast4">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvelast5">
+                    <p><img src="page19.png" width="100%" alt="It's really open! I can go home!"></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvelast5">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvelast6">
+                    <p><img src="page20.png" width="100%" alt="Thank you SO so much! I couldn't have made it without your help!"></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvelast6">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvelast7">
+                    <p><img src="page21.png" width="100%" alt="I wish I could give you something. My friend has ribbons. Robin sent you."></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvelast7">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#solvelast8">
+                    <p><img src="page22.png" width="100%" alt="Thank you again!"></p>
+                    <p>Next</p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="solvelast8">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="/">
+                    <p><img src="page23.png" width="100%" alt="Goodbye!"></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="/" >Close</a>
+        </div>
+    </div>
+
 
 
     <script>
