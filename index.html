@@ -45,7 +45,6 @@
         </div>
     </div> <!-- /page -->
 
-
     <div data-role="page" data-dialog="true" id="tweets">
         <div data-role="header" data-theme="a">
             <h1>Hints</h1>
@@ -94,6 +93,16 @@
                 <hr>
                 <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
             </form>
+            <div data-role="popup" id="wrongdialog1" data-overlay-theme="a" data-dismissable="true">
+                <div data-role="header" data-theme="a">
+                    <h1>Incorrect</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h3 class="ui-title">That doesn't look right.</h3>
+                    <a href="#photos" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Close</a>
+                </div>
+            </div>
+
         </div>
         <div data-role="footer">
             <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
@@ -142,6 +151,15 @@
                 <hr>
                 <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
             </form>
+            <div data-role="popup" id="wrongdialog2" data-overlay-theme="a" data-dismissable="true">
+                <div data-role="header" data-theme="a">
+                    <h1>Incorrect</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h3 class="ui-title">That doesn't look right.</h3>
+                    <a href="#ciphers" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Close</a>
+                </div>
+            </div>
 
         </div>
         <div data-role="footer">
@@ -181,6 +199,15 @@
                 <hr>
                 <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
             </form>
+            <div data-role="popup" id="wrongdialog3" data-overlay-theme="a" data-dismissable="true">
+                <div data-role="header" data-theme="a">
+                    <h1>Incorrect</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h3 class="ui-title">That doesn't look right.</h3>
+                    <a href="#riddles" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Close</a>
+                </div>
+            </div>
 
         </div>
         <div data-role="footer">
@@ -295,7 +322,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -322,7 +349,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -336,7 +363,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -363,7 +390,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -377,7 +404,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -391,7 +418,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -405,7 +432,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -419,7 +446,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -433,7 +460,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -447,7 +474,7 @@
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="/" >Skip</a>
         </div>
     </div>
 
@@ -470,6 +497,11 @@
         function resetStorage() {
             localStorage.clear();
             window.location.reload();
+        }
+        function cleanInputs(text) {
+            let textlower = text.toLowerCase();
+            let textdone = textlower.replace(/[^a-z]/g, "");
+            return textdone;
         }
 
         $( "#tweets" ).on("pagecreate", function(event) {
@@ -497,15 +529,57 @@
             }
         });
 
-        $( "#photoform" ).submit( function(e) {
-            e.preventDefault();
+        function setComplete(btn) {
+            $( btn ).addClass("ui-btn-b ui-icon-check ui-state-disabled");
+        }
+        function runNextSuccess() {
+            if (localStorage.getItem("solvesecond")) {
+                localStorage.setItem("solvelast", "yes");
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#solvelast1" );
+            } else if (localStorage.getItem("solvefirst")) {
+                localStorage.setItem("solvesecond", "yes");
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#solvesecond1" );
+            } else {
+                localStorage.setItem("solvefirst", "yes");
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#solvefirst1" );
+            }
+        }
 
+        $( "#photoform" ).on("submit", function(e) {
+            let text = $("#pass1").val() + $("#pass2").val() + $("#pass3").val();
+            let textclean = cleanInputs(text);
+            if(textclean === "strangermortyeverything") {
+                setComplete("#photobtn");
+                localStorage.setItem("photobtn", "yes");
+                runNextSuccess();
+            } else {
+                $( "#wrongdialog1" ).popup( "open" );
+            }
+            e.preventDefault();
         });
         $( "#cipherform" ).submit( function(e) {
+            let text = $("#pass4").val() + $("#pass5").val() + $("#pass6").val();
+            let textclean = cleanInputs(text);
+            if(textclean === "doctorstrangethedarktowercoraline") {
+                setComplete("#cipherbtn");
+                localStorage.setItem("cipherbtn", "yes");
+                runNextSuccess();
+            } else {
+                $( "#wrongdialog2" ).popup( "open" );
+            }
             e.preventDefault();
 
         });
         $( "#riddleform" ).submit( function(e) {
+            let text = $("#pass7").val() + $("#pass8").val() + $("#pass9").val();
+            let textclean = cleanInputs(text);
+            if(textclean === "nothingriverqueue") {
+                setComplete("#riddlebtn");
+                localStorage.setItem("riddlebtn", "yes");
+                runNextSuccess();
+            } else {
+                $( "#wrongdialog3" ).popup( "open" );
+            }
             e.preventDefault();
 
         });
