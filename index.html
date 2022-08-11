@@ -80,7 +80,20 @@
             <h1>Password Set One</h1>
         </div>
         <div role="main" class="ui-content">
-
+            <p>Find the photos at CONVERGENCE to find the passwords attached to them.</p>
+            <p>Look for the EYES.</p>
+            <form id="photoform">
+                <label for="pass1"><img width="70%" src="pass1.jpg" ></label>
+                <input type="text" name="pass1" id="pass1" data-clear-btn="true" value="">
+                <hr>
+                <label for="pass2"><img width="70%" src="pass2.jpg" ></label>
+                <input type="text" name="pass2" id="pass2" data-clear-btn="true" value="">
+                <hr>
+                <label for="pass3"><img width="70%" src="pass3.jpg" ></label>
+                <input type="text" name="pass3" id="pass3" data-clear-btn="true" value="">
+                <hr>
+                <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
+            </form>
         </div>
         <div data-role="footer">
             <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
@@ -105,6 +118,30 @@
             <h1>Passwords Set Two</h1>
         </div>
         <div role="main" class="ui-content">
+            <p>These passwords are secret codes that you need to solve. The KEYS to solving them are at the CONVERGENCE.</p>
+            <p>Look for the EYES.</p>
+            <hr>
+            <form id="cipherform">
+                <label for="pass4">
+                    <h3>A superhero who has traveled the multiverse:</h3>
+                    <img width="70%" src="cipher1.png" >
+                </label>
+                <input type="text" name="pass4" id="pass4" data-clear-btn="true" value="">
+                <hr>
+                <label for="pass5">
+                    <h3>The center of the multiverse in some stories:</h3>
+                    <img width="70%" src="cipher2.png" >
+                </label>
+                <input type="text" name="pass5" id="pass5" data-clear-btn="true" value="">
+                <hr>
+                <label for="pass6">
+                    <h3>A girl who once was trapped in another mother's world:</h3>
+                    <img width="70%" src="cipher3.png" >
+                </label>
+                <input type="text" name="pass6" id="pass6" data-clear-btn="true" value="">
+                <hr>
+                <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
+            </form>
 
         </div>
         <div data-role="footer">
@@ -130,6 +167,20 @@
             <h1>Passwords Set Three</h1>
         </div>
         <div role="main" class="ui-content">
+            <p>I don't have any clues for these passwords. There are riddles somewhere at the CONVERGENCE, but you'll have to find and solve them yourself.</p>
+            <p>Look for the EYES.</p>
+            <form id="riddleform">
+                <label for="pass7">1.</label>
+                <input type="text" name="pass7" id="pass7" data-clear-btn="true" value="">
+                <hr>
+                <label for="pass8">2.</label>
+                <input type="text" name="pass8" id="pass8" data-clear-btn="true" value="">
+                <hr>
+                <label for="pass9">3.</label>
+                <input type="text" name="pass9" id="pass9" data-clear-btn="true" value="">
+                <hr>
+                <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
+            </form>
 
         </div>
         <div data-role="footer">
@@ -416,18 +467,6 @@
 
 
     <script>
-        function gethash(str, seed = 1337) {
-            let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
-            for (let i = 0, ch; i < str.length; i++) {
-                ch = str.charCodeAt(i);
-                h1 = Math.imul(h1 ^ ch, 2654435761);
-                h2 = Math.imul(h2 ^ ch, 1597334677);
-            }
-            h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
-            h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
-            return 4294967296 * (2097151 & h2) + (h1>>>0);
-        };
-        
         function resetStorage() {
             localStorage.clear();
             window.location.reload();
@@ -458,10 +497,86 @@
             }
         });
 
+        $( "#photoform" ).submit( function(e) {
+            e.preventDefault();
+
+        });
+        $( "#cipherform" ).submit( function(e) {
+            e.preventDefault();
+
+        });
+        $( "#riddleform" ).submit( function(e) {
+            e.preventDefault();
+
+        });
+        $( "#pass1" ).on("input", function() {
+            text = $("#pass1").val();
+            localStorage.setItem("pass1", text);
+        });
+        $( "#pass2" ).on("input", function() {
+            text = $("#pass2").val();
+            localStorage.setItem("pass2", text);
+        });
+        $( "#pass3" ).on("input", function() {
+            text = $("#pass3").val();
+            localStorage.setItem("pass3", text);
+        });
+        $( "#pass4" ).on("input", function() {
+            text = $("#pass4").val();
+            localStorage.setItem("pass4", text);
+        });
+        $( "#pass5" ).on("input", function() {
+            text = $("#pass5").val();
+            localStorage.setItem("pass5", text);
+        });
+        $( "#pass6" ).on("input", function() {
+            text = $("#pass6").val();
+            localStorage.setItem("pass6", text);
+        });
+        $( "#pass7" ).on("input", function() {
+            text = $("#pass7").val();
+            localStorage.setItem("pass7", text);
+        });
+        $( "#pass8" ).on("input", function() {
+            text = $("#pass8").val();
+            localStorage.setItem("pass8", text);
+        });
+        $( "#pass9" ).on("input", function() {
+            text = $("#pass9").val();
+            localStorage.setItem("pass9", text);
+        });
+
         $(function() {
             if(!localStorage.getItem("seenintro")) {
                 localStorage.setItem("seenintro", "yes");
                 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#intro1" );
+            }
+            if(localStorage.getItem("pass1")) {
+                $("#pass1").val(localStorage.getItem("pass1"));
+            }
+            if(localStorage.getItem("pass2")) {
+                $("#pass2").val(localStorage.getItem("pass2"));
+            }
+            if(localStorage.getItem("pass3")) {
+                $("#pass3").val(localStorage.getItem("pass3"));
+            }
+            if(localStorage.getItem("pass4")) {
+                $("#pass4").val(localStorage.getItem("pass4"));
+            }
+            if(localStorage.getItem("pass5")) {
+                $("#pass5").val(localStorage.getItem("pass5"));
+            }
+            if(localStorage.getItem("pass6")) {
+                $("#pass6").val(localStorage.getItem("pass6"));
+            }
+            if(localStorage.getItem("pass7")) {
+                $("#pass7").val(localStorage.getItem("pass7"));
+            }
+            if(localStorage.getItem("pass8")) {
+                $("#pass8").val(localStorage.getItem("pass8"));
+            }
+            if(localStorage.getItem("pass9")) {
+                $("#pass9").val(localStorage.getItem("pass9"));
             }
         });
 
