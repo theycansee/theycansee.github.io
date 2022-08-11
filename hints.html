@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   </head>
   <body>
-    <div data-role="page" data-dialog="true">
+    <div data-role="page" data-dialog="true" id="tweets">
         <div data-role="header" data-theme="a">
             <h1>Hints</h1>
         </div>
@@ -27,4 +27,26 @@
         </div>
     </div>
 
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="tweetintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#tweets">
+                    <p><img src="page7.png" width="100%" alt="I will send clues out when I can find them, using the Tweet Bird app. #Robin sent me."></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="#tweets" >Close</a>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            if(!localStorage.getItem("seentweetintro")) {
+                localStorage.setItem("seentweetintro", "yes");
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#tweetintro" );
+            }
+        });
+
+    </script>
   </body>
