@@ -19,13 +19,13 @@
         <div role="main" class="ui-content">
             <div class="ui-body ui-body-a ui-corner-all">
                 <p>I will be posting hints, when I can find them.</p>
-                <p><a class="ui-btn" href="hints.html"><img src="twitter.png" width="100px" ></a></p>
+                <p><a class="ui-btn" href="#tweets"><img src="twitter.png" width="100px" ></a></p>
             </div>
             <h3 class="ui-bas ui-bar-a ui-corner-all">Passwords</h3>
             <div class="ui-body ui-body-a ui-corner-all">
-                <a id="photobtn" class="ui-btn ui-corners-all" href="#photos"><img src="btn1.png"></a>
-                <a id="cipherbtn" class="ui-btn ui-corners-all" href="#ciphers"><img src="btn2.png"></a>
-                <a id="riddlebtn" class="ui-btn ui-corners-all" href="#riddles"><img src="btn3.png"></a>
+                <a id="photobtn" class="ui-btn ui-corners-all" href="photos.html"><img src="btn1.png"></a>
+                <a id="cipherbtn" class="ui-btn ui-corners-all" href="ciphers.html"><img src="btn2.png"></a>
+                <a id="riddlebtn" class="ui-btn ui-corners-all" href="riddles.html"><img src="btn3.png"></a>
             </div>
         </div>
         <div data-role="footer">
@@ -45,26 +45,111 @@
         </div>
     </div> <!-- /page -->
 
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" class="passpage" id="photos">
 
+    <div data-role="page" data-dialog="true" id="tweets">
+        <div data-role="header" data-theme="a">
+            <h1>Hints</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <p>I will post hints as I can find them below, and to the Tweet Bird app.</p>
+            <p><a class="ui-btn" href="https://twitter.com/TheyCanSee2022"><img src="twitter.png" width="100px"><br>Bird App</a></p>
+            <h3>Hints</h3>
+            <p>I don't have any hints yet.</p>
+
+        </div>
         <div data-role="footer">
-            <a href="index.html" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
+            <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="tweetintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#tweets">
+                    <p><img src="page7.png" width="100%" alt="I will send clues out when I can find them, using the Tweet Bird app. #Robin sent me."></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="#tweets" >Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" class="passpage" id="photos">
+        <div data-role="header" data-theme="a">
+            <h1>Password Set One</h1>
+        </div>
+        <div role="main" class="ui-content">
+
+        </div>
+        <div data-role="footer">
+            <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="photosintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#photos">
+                    <p><img src="page8.png" width="100%" alt="These passwords come from different depictions of the multiverse. Look for the EYES to find them"></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="#photos" >Close</a>
         </div>
     </div>
 
     <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" class="passpage" id="ciphers">
+        <div data-role="header" data-theme="a">
+            <h1>Passwords Set Two</h1>
+        </div>
+        <div role="main" class="ui-content">
 
+        </div>
         <div data-role="footer">
-            <a href="index.html" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
+            <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="ciphersintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#ciphers">
+                    <p><img src="page9.png" width="100%" alt="These passwords are secret codes and ciphers. Look for the EYES to decipher them."></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="#ciphers" >Close</a>
         </div>
     </div>
 
     <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" class="passpage" id="riddles">
+        <div data-role="header" data-theme="a">
+            <h1>Passwords Set Three</h1>
+        </div>
+        <div role="main" class="ui-content">
 
+        </div>
         <div data-role="footer">
-            <a href="index.html" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
+            <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
         </div>
     </div>
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="riddlesintro">
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-b">
+                <a href="#riddles">
+                    <p><img src="page10.png" width="100%" alt="These passwords are hidden behind riddles. Look for the EYES to find the riddles, but you have to answer them yourself."></p>
+                </a>
+            </div>
+        </div>
+        <div data-role="footer">
+        <a href="#riddles" >Close</a>
+        </div>
+    </div>
+
 
     <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="intro1">
         <div role="main" class="ui-content">
@@ -141,45 +226,6 @@
             <div class="ui-body ui-body-b">
                 <a href="/">
                     <p><img src="page6.png" width="100%" alt="Oh, one more thing. I have a friend at the CONVERGENCE. He is wearing my sigil. If you see him, tell him Robin sent you."></p>
-                </a>
-            </div>
-        </div>
-        <div data-role="footer">
-        <a href="/" >Close</a>
-        </div>
-    </div>
-
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="photosintro">
-        <div role="main" class="ui-content">
-            <div class="ui-body ui-body-b">
-                <a href="/">
-                    <p><img src="page8.png" width="100%" alt="These passwords come from different depictions of the multiverse. Look for the EYES to find them"></p>
-                </a>
-            </div>
-        </div>
-        <div data-role="footer">
-        <a href="/" >Close</a>
-        </div>
-    </div>
-
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="ciphersintro">
-        <div role="main" class="ui-content">
-            <div class="ui-body ui-body-b">
-                <a href="/">
-                    <p><img src="page9.png" width="100%" alt="These passwords are secret codes and ciphers. Look for the EYES to decipher them."></p>
-                </a>
-            </div>
-        </div>
-        <div data-role="footer">
-        <a href="/" >Close</a>
-        </div>
-    </div>
-
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="riddlesintro">
-        <div role="main" class="ui-content">
-            <div class="ui-body ui-body-b">
-                <a href="/">
-                    <p><img src="page10.png" width="100%" alt="These passwords are hidden behind riddles. Look for the EYES to find the riddles, but you have to answer them yourself."></p>
                 </a>
             </div>
         </div>
@@ -387,6 +433,30 @@
             window.location.reload();
         }
 
+        $( "#tweets" ).on("pagecreate", function(event) {
+            if(!localStorage.getItem("seentweetintro")) {
+                localStorage.setItem("seentweetintro", "yes");
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#tweetintro" );
+            }
+        });
+        $( "#photos" ).on("pagecreate", function(event) {
+            if(!localStorage.getItem("seenphotointro")) {
+                localStorage.setItem("seenphotointro", "yes");
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#photosintro" );
+            }
+        });
+        $( "#ciphers" ).on("pagecreate", function(event) {
+            if(!localStorage.getItem("seencipherintro")) {
+                localStorage.setItem("seencipherintro", "yes");
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#ciphersintrointro" );
+            }
+        });
+        $( "#riddles" ).on("pagecreate", function() {
+            if(!localStorage.getItem("seenriddleintro")) {
+                localStorage.setItem("seenriddleintro", "yes");
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "#riddlesintrointro" );
+            }
+        });
 
         $(function() {
             if(!localStorage.getItem("seenintro")) {
