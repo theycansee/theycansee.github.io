@@ -13,26 +13,27 @@
   <body>
 
     <div data-role="page" id="mainpage">
-    <div data-role="header">
-
-    </div>
-    <div role="main" class="ui-content">
-
-    <div data-role="header">
-
-    </div>
-
-    <div class="ui-body ui-body-a ui-corner-all">
-
-        <p>This is a test</p>
-        <p><img src="eyes.png" alt="Mysterious eyes staring at you" width="100%"></p>
-
-    </div>
-    </div>
-    <div data-role="footer">
-        <button class="ui-btn" onclick="resetStorage()">Reset</button>
-    </div>
+        <div data-role="header">
+            <p><img src="eyes.png" alt="Mysterious eyes staring at you" width="100%"></p>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <p><a href="#tweets"><img src="twitter.png"></a></p>
+            </div>
+        </div>
+        <div data-role="footer">
+            <button class="ui-btn" onclick="resetStorage()">Reset</button>
+        </div>
     </div> <!-- /page -->
+
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" id="tweets">
+        <div role="main" class="ui-content">
+            <a class="twitter-timeline" href="https://twitter.com/TheyCanSee2022?ref_src=twsrc%5Etfw">Tweets by TheyCanSee2022</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div data-role="footer">
+            <a href="/" data-rel="back">Close</a>
+        </div>
+    </div>
 
     <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="intro1">
         <div role="main" class="ui-content">
@@ -120,13 +121,13 @@
     <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="tweetintro">
         <div role="main" class="ui-content">
             <div class="ui-body ui-body-b">
-                <a href="/">
+                <a href="#tweets">
                     <p><img src="page7.png" width="100%" alt="I will send clues out when I can find them, using the Tweet Bird app. #Robin sent me."></p>
                 </a>
             </div>
         </div>
         <div data-role="footer">
-        <a href="/" >Close</a>
+        <a href="#tweets" >Close</a>
         </div>
     </div>
 
