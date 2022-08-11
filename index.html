@@ -23,13 +23,25 @@
             </div>
             <h3 class="ui-bas ui-bar-a ui-corner-all">Passwords</h3>
             <div class="ui-body ui-body-a ui-corner-all">
-                <a id="photobtn" class="ui-btn ui-corners-all" href="#photos"> </a>
-                <a id="cipherbtn" class="ui-btn ui-corners-all" href="#ciphers"> </a>
-                <a id="riddlebtn" class="ui-btn ui-corners-all" href="#riddles"> </a>
+                <a id="photobtn" class="ui-btn ui-corners-all" href="#photos"><img src="btn1.png"></a>
+                <a id="cipherbtn" class="ui-btn ui-corners-all" href="#ciphers"><img src="btn2.png"></a>
+                <a id="riddlebtn" class="ui-btn ui-corners-all" href="#riddles"><img src="btn3.png"></a>
             </div>
         </div>
         <div data-role="footer">
-            <button class="ui-btn" onclick="resetStorage()">Reset all progress</button>
+            <a class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-b" href="#resetdialog" data-rel="popup" data-position-to="window" data-transition="pop">Reset all progress</a>
+            <div data-role="popup" id="resetdialog" data-overlay-theme="b" data-dismissable="true">
+                <div data-role="header" data-theme="a">
+                    <h1>Reset all progress?</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h3 class="ui-title">Are you sure you want to reset?</h3>
+                    <p>This will completely reset your progress and start over from the beginning.</p>
+                    <p>(You may need to refresh the page.)</p>
+                    <a href="index.html" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+                    <a href="index.html" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow" onClick="resetStorage();">Reset</a>
+                </div>
+            </div>
         </div>
     </div> <!-- /page -->
 
@@ -372,6 +384,7 @@
         
         function resetStorage() {
             localStorage.clear();
+            window.location.reload();
         }
 
 
