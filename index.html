@@ -18,8 +18,9 @@
         </div>
         <div role="main" class="ui-content">
             <div class="ui-body ui-body-a ui-corner-all">
-                <p>I will be posting hints, when I can find them.</p>
-                <p><a class="ui-btn" href="#tweets"><img src="twitter.png" width="100px" ></a></p>
+                <p>I will be posting hints, when I can find them, on the Tweet Bird app. You can follow <a href="https://twitter.com/TheyCanSee2022" target="_blank">@TheyCanSee</a> or <a href="https://twitter.com/hashtag/RobinSentMe" target="_blank">#RobinSentMe</a></p>
+                <p>I will also post where my friend is at the CONVERGENCE, when I know. Remember to tell him that Robin sent you.</p>
+                <p><a class="ui-btn" href="https://twitter.com/TheyCanSee2022" target="_blank"><img src="twitter.png" width="100px"><br>Tweet Bird App</a></p>
             </div>
             <h3 class="ui-bas ui-bar-a ui-corner-all">Passwords</h3>
             <div class="ui-body ui-body-a ui-corner-all">
@@ -74,7 +75,7 @@
         </div>
     </div>
 
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" class="passpage" id="photos">
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" data-close-btn="none" class="passpage" id="photos">
         <div data-role="header" data-theme="a">
             <h1>Password Set One</h1>
         </div>
@@ -122,7 +123,7 @@
         </div>
     </div>
 
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" class="passpage" id="ciphers">
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" data-close-btn="none" class="passpage" id="ciphers">
         <div data-role="header" data-theme="a">
             <h1>Passwords Set Two</h1>
         </div>
@@ -167,7 +168,7 @@
         </div>
     </div>
 
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="ciphersintro">
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" data-close-btn="none" class="comicpage" id="ciphersintro">
         <div role="main" class="ui-content">
             <div class="ui-body ui-body-b">
                 <a href="#ciphers">
@@ -621,6 +622,15 @@
         });
 
         $(function() {
+            if(localStorage.getItem("photobtn")) {
+                setComplete("#photobtn");
+            }
+            if(localStorage.getItem("cipherbtn")) {
+                setComplete("#cipherbtn");
+            }
+            if(localStorage.getItem("riddlebtn")) {
+                setComplete("#riddlebtn");
+            }
             if(!localStorage.getItem("seenintro")) {
                 localStorage.setItem("seenintro", "yes");
                 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#intro1" );
