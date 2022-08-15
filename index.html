@@ -17,16 +17,29 @@
             <p><img src="eyes.png" alt="Mysterious eyes staring at you" width="100%"></p>
         </div>
         <div role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all" id="success" style="display:none;">
+                <h1>You did it!</h1>
+                <p>Thank you for helping me get home!</p>
+            </div>
             <div class="ui-body ui-body-a ui-corner-all">
                 <p>I will be posting hints, when I can find them, on the Tweet Bird app. You can follow <a href="https://twitter.com/TheyCanSee2022" target="_blank">@TheyCanSee</a> or <a href="https://twitter.com/hashtag/RobinSentMe" target="_blank">#RobinSentMe</a></p>
                 <p>I will also post where my friend is at the CONVERGENCE, when I know. Remember to tell him that Robin sent you.</p>
                 <p><a class="ui-btn" href="https://twitter.com/TheyCanSee2022" target="_blank"><img src="twitter.png" width="100px"><br>Tweet Bird App</a></p>
+                <hr>
+                <p>The CONVERGENCE has ended! Thank you to everyone who has helped me to get home! There are now links on the clue pages to see the clues that were hidden around the CONVERGENCE, so that you may help other versions of me escape the void and get home. It may not be as fun as it was at the CONVERGENCE in person, though.</p>
             </div>
-            <h3 class="ui-bas ui-bar-a ui-corner-all">Passwords</h3>
+            <h3 class="ui-bar ui-bar-a ui-corner-all">Passwords</h3>
             <div class="ui-body ui-body-a ui-corner-all">
                 <a id="photobtn" class="ui-btn ui-corners-all" href="#photos"><img src="btn1.png"></a>
                 <a id="cipherbtn" class="ui-btn ui-corners-all" href="#ciphers"><img src="btn2.png"></a>
                 <a id="riddlebtn" class="ui-btn ui-corners-all" href="#riddles"><img src="btn3.png"></a>
+            </div>
+            <h3 class="ui-bar ui-bar-a ui-corner-all">Replay story sections</h3>
+            <div class="ui-body ui-body-a ui-corner-all">
+                <a href="#intro1" class="ui-btn ui-corners-all" data-rel="dialog">Replay introduction</a>
+                <a href="#solvefirst1" id="lock1replay" class="ui-btn ui-corcers-all" data-rel="dialog" style="display:none;">Replay First lock opened</a>
+                <a href="#solvesecond1" id="lock2replay" class="ui-btn ui-corcers-all" data-rel="dialog" style="display:none;">Replay Second lock opened</a>
+                <a href="#solvelast1" id="lock3replay" class="ui-btn ui-corcers-all" data-rel="dialog" style="display:none;">Replay Final lock opened</a>
             </div>
         </div>
         <div data-role="footer">
@@ -46,35 +59,6 @@
         </div>
     </div> <!-- /page -->
 
-    <div data-role="page" data-dialog="true" id="tweets">
-        <div data-role="header" data-theme="a">
-            <h1>Hints</h1>
-        </div>
-        <div role="main" class="ui-content">
-            <p>I will post hints as I can find them below, and to the Tweet Bird app.</p>
-            <p><a class="ui-btn" href="https://twitter.com/TheyCanSee2022"><img src="twitter.png" width="100px"><br>Bird App</a></p>
-            <h3>Hints</h3>
-            <p>I don't have any hints yet.</p>
-
-        </div>
-        <div data-role="footer">
-            <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Close</a>
-        </div>
-    </div>
-
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="b" class="comicpage" id="tweetintro">
-        <div role="main" class="ui-content">
-            <div class="ui-body ui-body-b">
-                <a href="#tweets">
-                    <p><img src="page7.png" width="100%" alt="I will send clues out when I can find them, using the Tweet Bird app. #Robin sent me."></p>
-                </a>
-            </div>
-        </div>
-        <div data-role="footer">
-        <a href="#tweets" >Close</a>
-        </div>
-    </div>
-
     <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" data-close-btn="none" class="passpage" id="photos">
         <div data-role="header" data-theme="a">
             <h1>Password Set One</h1>
@@ -83,17 +67,40 @@
             <p>Find the photos at CONVERGENCE to find the passwords attached to them.</p>
             <p>Look for the EYES.</p>
             <form id="photoform">
-                <label for="pass1"><img width="70%" src="pass1.jpg" ></label>
+                <label for="pass1"><img width="100%" src="pass1.jpg" ></label>
                 <input type="text" name="pass1" id="pass1" data-clear-btn="true" value="">
                 <hr>
-                <label for="pass2"><img width="70%" src="pass2.jpg" ></label>
+                <label for="pass2"><img width="100%" src="pass2.jpg" ></label>
                 <input type="text" name="pass2" id="pass2" data-clear-btn="true" value="">
                 <hr>
-                <label for="pass3"><img width="70%" src="pass3.jpg" ></label>
+                <label for="pass3"><img width="100%" src="pass3.jpg" ></label>
                 <input type="text" name="pass3" id="pass3" data-clear-btn="true" value="">
                 <hr>
                 <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
             </form>
+            <div>
+                <a href="#clue1" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #1</a>
+                <a href="#clue2" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #2</a>
+                <a href="#clue3" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #3</a>
+            </div>
+            <div id="clue1" data-role="popup" class="ui-content">
+                <a href="#photos" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-photo1.png" width="100%" alt="STRANGER">
+                </div>
+            </div>
+            <div id="clue2" data-role="popup" class="ui-content">
+                <a href="#photos" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-photo2.png" width="100%" alt="MORTY">
+                </div>
+            </div>
+            <div id="clue3" data-role="popup" class="ui-content">
+                <a href="#photos" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-photo3.png" width="100%" alt="EVERYTHING">
+                </div>
+            </div>
             <div data-role="popup" id="wrongdialog1" data-overlay-theme="a" data-dismissable="true">
                 <div data-role="header" data-theme="a">
                     <h1>Incorrect</h1>
@@ -134,24 +141,47 @@
             <form id="cipherform">
                 <label for="pass4">
                     <h3>A superhero who has traveled the multiverse:</h3>
-                    <img width="70%" src="cipher1.png" >
+                    <img width="100%" src="cipher1.png" >
                 </label>
                 <input type="text" name="pass4" id="pass4" data-clear-btn="true" value="">
                 <hr>
                 <label for="pass5">
                     <h3>The center of the multiverse in some stories:</h3>
-                    <img width="70%" src="cipher2.png" >
+                    <img width="100%" src="cipher2.png" >
                 </label>
                 <input type="text" name="pass5" id="pass5" data-clear-btn="true" value="">
                 <hr>
                 <label for="pass6">
                     <h3>A girl who once was trapped in another mother's world:</h3>
-                    <img width="70%" src="cipher3.png" >
+                    <img width="100%" src="cipher3.png" >
                 </label>
                 <input type="text" name="pass6" id="pass6" data-clear-btn="true" value="">
                 <hr>
                 <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
             </form>
+            <div>
+                <a href="#clue4" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #1</a>
+                <a href="#clue5" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #2</a>
+                <a href="#clue6" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #3</a>
+            </div>
+            <div id="clue4" data-role="popup" class="ui-content">
+                <a href="#ciphers" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-cipher1.png" width="100%" alt="[a caesar cipher]">
+                </div>
+            </div>
+            <div id="clue5" data-role="popup" class="ui-content">
+                <a href="#ciphers" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-cipher2.png" width="100%" alt="[a pigpen cipher]">
+                </div>
+            </div>
+            <div id="clue6" data-role="popup" class="ui-content">
+                <a href="#ciphers" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-cipher3.png" width="100%" alt="[a playing card cipher]">
+                </div>
+            </div>
             <div data-role="popup" id="wrongdialog2" data-overlay-theme="a" data-dismissable="true">
                 <div data-role="header" data-theme="a">
                     <h1>Incorrect</h1>
@@ -181,7 +211,7 @@
         </div>
     </div>
 
-    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" class="passpage" id="riddles">
+    <div data-role="page" data-dialog="true" data-theme="a" data-overlay-theme="a" data-close-btn="none" class="passpage" id="riddles">
         <div data-role="header" data-theme="a">
             <h1>Passwords Set Three</h1>
         </div>
@@ -200,6 +230,29 @@
                 <hr>
                 <input type="submit" value="Check" class="ui-shadow ui-btn ui-corner-all">
             </form>
+            <div>
+                <a href="#clue7" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #1</a>
+                <a href="#clue8" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #2</a>
+                <a href="#clue9" class="ui-btn ui-btn-inline ui-corcer-all ui-shadow" data-rel="popup">Show Clue #3</a>
+            </div>
+            <div id="clue7" data-role="popup" class="ui-content">
+                <a href="#riddles" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-riddle1.png" width="100%" alt="The poor have it, the rich need it, and if you eat it you die. What is it? [7 letters]">
+                </div>
+            </div>
+            <div id="clue8" data-role="popup" class="ui-content">
+                <a href="#riddles" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-riddle2.png" width="100%" alt="What runs but never walks, has a mouth but never talks, has a bed but never sleeps? [5 letters]">
+                </div>
+            </div>
+            <div id="clue9" data-role="popup" class="ui-content">
+                <a href="#riddles" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+                <div role="main" class="ui-content">
+                    <img src="clue-riddle3.png" width="100%" alt="What English word is pronounced the same if you take four letters away? [5 letters]">
+                </div>
+            </div>
             <div data-role="popup" id="wrongdialog3" data-overlay-theme="a" data-dismissable="true">
                 <div data-role="header" data-theme="a">
                     <h1>Incorrect</h1>
@@ -537,12 +590,16 @@
             if (localStorage.getItem("solvesecond")) {
                 localStorage.setItem("solvelast", "yes");
                 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#solvelast1" );
+                $( "#lock3replay" ).show();
+                $( "#success" ).show();
             } else if (localStorage.getItem("solvefirst")) {
                 localStorage.setItem("solvesecond", "yes");
                 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#solvesecond1" );
+                $( "#lock2replay" ).show();
             } else {
                 localStorage.setItem("solvefirst", "yes");
                 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#solvefirst1" );
+                $( "#lock1replay" ).show();
             }
         }
 
@@ -630,6 +687,16 @@
             }
             if(localStorage.getItem("riddlebtn")) {
                 setComplete("#riddlebtn");
+            }
+            if(localStorage.getItem("solvefirst")) {
+                $( "#lock1replay" ).show();
+            }
+            if(localStorage.getItem("solvesecond")) {
+                $( "#lock2replay" ).show();
+            }
+            if(localStorage.getItem("solvelast")) {
+                $( "#lock3replay" ).show();
+                $( "#success" ).show();
             }
             if(!localStorage.getItem("seenintro")) {
                 localStorage.setItem("seenintro", "yes");
